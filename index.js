@@ -1,6 +1,6 @@
 // code away!
 const server = require('./server.js');
 
-server.listen(4031, () => {
-    console.log('\n* Server Running on http://localhost:4000 *\n');
+server.listen(6500, () => {
+    console.log('\n* Server Running on http://localhost:6500 *\n');
 });
