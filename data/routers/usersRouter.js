@@ -51,6 +51,16 @@ usersRouter.put('/:id', async(req, res) => {
     } catch (error) {
         res.status(500).json({ message: "User could not be updated." });
     }
-})
+});
+
+usersRouter.get('/:id/posts', async (req, res) => {
+    try {
+        console.log(req.params.id);
+        const userPosts = await Users.getUserPosts(req.params.id);
+        res.status(200).json(userPosts);
+    } catch (error) {
+        res.status(500).json({ message: "Could not fetch user posts." });
+    }
+});
 
 module.exports = usersRouter;
